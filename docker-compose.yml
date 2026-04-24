@@ -1,0 +1,13 @@
+services:
+  stock-visualizer:
+    build: .
+    ports:
+      - "8050:8050"
+    volumes:
+      - stock-data:/app/data
+    env_file:
+      - .env
+    restart: unless-stopped
+
+volumes:
+  stock-data:
